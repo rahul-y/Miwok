@@ -1,9 +1,11 @@
 package com.example.android.miwok;
+
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class WordAdapter extends ArrayAdapter<word> {
             // going to use this second argument, so it can be any value. Here, we used 0.
             super(context, 0, words);
         }
+
     @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             // Check if the existing view is being reused, otherwise inflate the view
@@ -42,7 +45,15 @@ public class WordAdapter extends ArrayAdapter<word> {
             // Get the version number from the current AndroidFlavor object and
             // set this text on the number TextView
             miwokTextView.setText(word_item.getDefaultTranslation());
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
 
+        if (word_item.hasImage()){
+            // Set the ImageView to the image resource specified in the current Word
+            imageView.setImageResource(word_item.getImageResourceId());
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
             // Find the ImageView in the list_item.xml layout with the ID list_item_icon
                 return listItemView;
     }

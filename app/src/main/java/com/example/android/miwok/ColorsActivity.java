@@ -28,17 +28,14 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
         ArrayList<word> words=new ArrayList<word>();
-        words.add(new word("one","lutti"));
-        words.add(new word("two","otiiko"));
-        words.add(new word("three","tolookosu"));
-        words.add(new word("four","oyyisa"));
-        words.add(new word("five","massokka"));
-        words.add(new word("six","temmokaa"));
-        words.add(new word("seven","kenekaku"));
-        words.add(new word("eight","kawinta"));
-        words.add(new word("nine","wo'e"));
-        words.add(new word("ten","na'accha"));
-
+        words.add(new word("red","weṭeṭṭi",R.drawable.color_red));
+        words.add(new word("green","chokokki",R.drawable.color_green));
+        words.add(new word("brown","ṭakaakki",R.drawable.color_brown));
+        words.add(new word("gray","ṭopoppi",R.drawable.color_gray));
+        words.add(new word("black","kululli",R.drawable.color_black));
+        words.add(new word("white","kelelli",R.drawable.color_white));
+        words.add(new word("dusty yellow","ṭopiisә",R.drawable.color_dusty_yellow));
+        words.add(new word("mustard yellow","chiwiiṭә",R.drawable.color_mustard_yellow));
         WordAdapter adapter =new WordAdapter(this,words);
         ListView hh =(ListView) findViewById(R.id.listview);
         hh.setAdapter(adapter);
