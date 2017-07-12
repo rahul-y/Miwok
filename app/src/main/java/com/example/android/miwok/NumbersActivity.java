@@ -39,7 +39,7 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new word("nine","wo'e",R.drawable.number_nine));
         words.add(new word("ten","na'accha",R.drawable.number_ten));
 
-WordAdapter adapter =new WordAdapter(this,words);
+WordAdapter adapter =new WordAdapter(this,words,R.color.category_numbers);
         ListView hh =(ListView) findViewById(R.id.listview);
         hh.setAdapter(adapter);
     }
